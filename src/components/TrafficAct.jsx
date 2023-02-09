@@ -1,8 +1,12 @@
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import MUIDataTable from "mui-datatables";
+import { useEffect, useState } from "react";
+import { useAct } from "../Context/RoadTrafficActContext";
 
 function TrafficAct() {
+  var { value } = useAct();
+  var { fetchCons, trafficLaws } = value;
   const columns = [
     {
       name: "cons",
@@ -54,16 +58,25 @@ function TrafficAct() {
     },
   ];
 
-  const rows = [
-    {
-      cons: 1,
-      description: "disc",
-      fineAmt: "10,000",
-      points: "10",
-      mca: "ah",
-      sec_of_regs: "reg",
-    },
-  ];
+  const [rows, setRows] = useState([]);
+
+  useEffect(() => {
+    try {
+      if (trafficLaws.length === 0) {
+        fetchCons(value);
+      } else {
+        let tempRows = [];
+        trafficLaws.map((item) => {
+          //console.log(item);
+          tempRows.push(item);
+          return;
+        });
+        setRows(tempRows);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  }, [trafficLaws]);
 
   const options = {
     filterType: "dropdown",
@@ -78,14 +91,14 @@ function TrafficAct() {
     },
     print: false,
     sortOrder: {
-      name: "dateCreated",
-      direction: "desc",
+      name: "cons",
+      direction: "asc",
     },
   };
   return (
     <>
-      <Container maxWidth="md">
-        <Box sx={{ bgcolor: "#cfe8fc", height: "100vh" }}>
+      <Container maxWidth="lg">
+        <Box sx={{ height: "100vh" }}>
           <MUIDataTable
             title="Road Traffic Act"
             data={rows}
