@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
-import Footer from "./Footer";
+import App from "./components/App";
+import Footer from "./components/Footer";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "./theme";
