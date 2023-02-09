@@ -4,10 +4,39 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <title>Pdf File Ready!!!</title>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
+  <script>
+    // before React is loaded
+    // if (typeof window.__REACT_DEVTOOLS_GLOBAL_HOOK__ === 'object') {
+    //     __REACT_DEVTOOLS_GLOBAL_HOOK__.inject = function() {};
+    // }
+
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker
+          .register("./serviceworker.js")
+          .then((reg) => {
+            /*console.log("Success: ", reg.scope)*/
+          })
+          .catch((err) => console.log("Failure: ", err));
+      });
+    }
+
+    var ua = window.navigator.userAgent;
+    var msie = ua.indexOf("MSIE ");
+    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    // console.log("Safari result is:" + isSafari);
+    // console.log(msie);
+
+    if (msie > 0 && !isSafari) {
+      if (window.location.port != 3000) {
+        __REACT_DEVTOOLS_GLOBAL_HOOK__.inject = function () {};
+      }
+    }
+  </script>
 </html>
