@@ -21,7 +21,7 @@ function TrafficAct() {
       label: "DESCRIPTION",
       options: {
         filter: true,
-        sort: true,
+        sort: false,
       },
     },
     {
@@ -45,7 +45,7 @@ function TrafficAct() {
       label: "MCA",
       options: {
         filter: true,
-        sort: true,
+        sort: false,
       },
     },
     {
@@ -53,7 +53,7 @@ function TrafficAct() {
       label: "SECTION OF RTA/REGULATIONS",
       options: {
         filter: false,
-        sort: true,
+        sort: false,
       },
     },
   ];
@@ -94,6 +94,8 @@ function TrafficAct() {
       name: "cons",
       direction: "asc",
     },
+    expandableRowsHeader: false,
+    responsive: "standard",
   };
   return (
     <>
