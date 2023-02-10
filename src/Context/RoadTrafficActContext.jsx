@@ -40,7 +40,11 @@ function ActProvider({ children }) {
     const unsubscribe = OnSnapshot(q, (querySnapshot) => {
       querySnapshot.forEach((doc) => {
         var res = doc.data();
-        consArr.push(res);
+        consArr.push({
+          ...res,
+          points: parseInt(res.points),
+          fineAmt: parseFloat(res.fineAmt),
+        });
       });
 
       payload.trafficLaws = consArr;
