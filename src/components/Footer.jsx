@@ -1,9 +1,12 @@
 import { Typography } from "@mui/material";
+import { Container } from "@mui/system";
 
 function Footer() {
   return (
     <>
-      <Typography sx={{ textAlign: "center" }}>Footer</Typography>
+      <Container>
+        <Typography sx={{ textAlign: "center" }}>Footer</Typography>
+      </Container>
     </>
   );
 }
