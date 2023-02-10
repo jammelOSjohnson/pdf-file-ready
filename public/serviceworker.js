@@ -1,9 +1,5 @@
 const CACHE_NAME = "version-1";
-const urlsToCache = [
-  "https://reliable-puffpuff-dad3cf.netlify.app/",
-  "index.html",
-  "offline.html",
-];
+const urlsToCache = ["/index.html", "/offline.html"];
 
 const self = this;
 
