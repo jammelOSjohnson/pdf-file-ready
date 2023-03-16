@@ -1,6 +1,6 @@
 import ActProvider from "../Context/RoadTrafficActContext";
 import Logo from "./Logo";
-import TrafficAct from "./TrafficAct";
+import TrafficAct from "./TrafficAct/TrafficAct";
 
 function App() {
   return (

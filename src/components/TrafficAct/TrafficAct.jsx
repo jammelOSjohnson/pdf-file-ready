@@ -2,7 +2,8 @@ import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import MUIDataTable from "mui-datatables";
 import { useEffect, useState } from "react";
-import { useAct } from "../Context/RoadTrafficActContext";
+import { useAct } from "../../Context/RoadTrafficActContext";
+import "./TrafficAct.css";
 
 function TrafficAct() {
   var { value } = useAct();
@@ -100,12 +101,13 @@ function TrafficAct() {
   return (
     <>
       <Container maxWidth="lg">
-        <Box sx={{ height: "100vh" }}>
+        <Box>
           <MUIDataTable
             title="Road Traffic Act"
             data={rows}
             columns={columns}
             options={options}
+            className="mtable"
           />
         </Box>
       </Container>
