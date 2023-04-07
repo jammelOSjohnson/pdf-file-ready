@@ -24,3 +24,5 @@ dist-ssr
 *.sw?
 appConfig.json
 backup.json
+coverage/
+dev-dist/

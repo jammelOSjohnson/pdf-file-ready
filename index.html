@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/192x192.png" />
-    <link rel="manifest" href="/manifest.json" />
+    <!-- <link rel="manifest" href="/manifest.json" /> -->
     <link rel="apple-touch-icon" href="/192x192.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#FFF" />
@@ -19,16 +19,16 @@
     //     __REACT_DEVTOOLS_GLOBAL_HOOK__.inject = function() {};
     // }
 
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", () => {
-        navigator.serviceWorker
-          .register("/serviceworker.js")
-          .then((reg) => {
-            /*console.log("Success: ", reg.scope)*/
-          })
-          .catch((err) => console.log("Failure: ", err));
-      });
-    }
+    // if ("serviceWorker" in navigator) {
+    //   window.addEventListener("load", () => {
+    //     navigator.serviceWorker
+    //       .register("/serviceworker.js")
+    //       .then((reg) => {
+    //         /*console.log("Success: ", reg.scope)*/
+    //       })
+    //       .catch((err) => console.log("Failure: ", err));
+    //   });
+    // }
 
     var ua = window.navigator.userAgent;
     var msie = ua.indexOf("MSIE ");
